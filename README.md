@@ -45,7 +45,7 @@ $client = new Client(pdo: new PDO(...))
 ### Querying
 
 ```php
-/** @var \Forevue\HarvesterMetadataSdk\Client $client */
+/* @var \Forevue\HarvesterMetadataSdk\Client $client */
 $client->sources()->all();
 $client->sources()->find(1234);
 $client->sources()->findByUrn('urn:forevue:source:code-hash:static-hash');
@@ -54,14 +54,14 @@ $client->providers()->all();
 $client->providers()->find(1234);
 $client->providers()->findByUrn('urn:forevue:provider:code-hash:static-hash');
 
-/** @var \Forevue\HarvesterMetadataSdk\DataObjects\Source $source */
+/* @var \Forevue\HarvesterMetadataSdk\DataObjects\Source $source */
 $source->id();
 $source->name(); // etc
 $source->isDirty() // this is the only computed property
 $source->subSources(); // returns the child sources
 $source->provider(); // returns the parent provider object
 
-/** @var \Forevue\HarvesterMetadataSdk\DataObjects\Provider $provider */
+/* @var \Forevue\HarvesterMetadataSdk\DataObjects\Provider $provider */
 $provider->id();
 $provider->name(); // etc
 $provider->sources(); // returns the provider's sources
