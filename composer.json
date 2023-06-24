@@ -20,12 +20,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Felix\\HarvesterMetadataSdk\\": "src/"
+            "Forevue\\HarvesterMetadataSdk\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Felix\\HarvesterMetadataSdk\\Tests\\": "tests/"
+            "Forevue\\HarvesterMetadataSdk\\Tests\\": "tests/"
         }
     },
     "minimum-stability": "dev",

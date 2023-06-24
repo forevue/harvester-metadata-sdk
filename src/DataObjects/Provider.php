@@ -1,10 +1,10 @@
 <?php
 
-namespace Felix\HarvesterMetadataSdk\DataObjects;
+namespace Forevue\HarvesterMetadataSdk\DataObjects;
 
-use Felix\HarvesterMetadataSdk\Client;
-use Felix\HarvesterMetadataSdk\DataObjects\Concerns\Resource;
-use Felix\HarvesterMetadataSdk\Repositories\SourceRepository;
+use Forevue\HarvesterMetadataSdk\Client;
+use Forevue\HarvesterMetadataSdk\DataObjects\Concerns\Resource;
+use Forevue\HarvesterMetadataSdk\Repositories\SourceRepository;
 use JsonSerializable;
 
 class Provider implements JsonSerializable

@@ -1,10 +1,10 @@
 <?php
 
-namespace Felix\HarvesterMetadataSdk\Repositories;
+namespace Forevue\HarvesterMetadataSdk\Repositories;
 
-use Felix\HarvesterMetadataSdk\Client;
-use Felix\HarvesterMetadataSdk\DataObjects\Provider;
-use Felix\HarvesterMetadataSdk\DataObjects\Source;
+use Forevue\HarvesterMetadataSdk\Client;
+use Forevue\HarvesterMetadataSdk\DataObjects\Provider;
+use Forevue\HarvesterMetadataSdk\DataObjects\Source;
 
 class SourceRepository
 {

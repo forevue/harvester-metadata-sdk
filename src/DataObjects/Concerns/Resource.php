@@ -1,6 +1,6 @@
 <?php
 
-namespace Felix\HarvesterMetadataSdk\DataObjects\Concerns;
+namespace Forevue\HarvesterMetadataSdk\DataObjects\Concerns;
 
 use ReflectionClass;
 

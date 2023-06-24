@@ -15,10 +15,60 @@ You can install the package via composer:
 ```bash
 composer require forevue/harvester-metadata-sdk
 ```
-    
+
 ## Usage
 
-// Usage goes here
+> This is a cowboy-style SDK, you connect to the database directly.
+
+### Getting started
+
+```php
+use Forevue\HarvesterMetadataSdk\Client;
+
+// This creates a PDO instance behind the scenes
+$client = new Client(
+    host: 'localhost',
+    password: 'root',
+    port: 5432,
+    user: 'postgres',
+    database: 'postgres',
+    driver: 'pgsql',
+)
+
+// Or,
+$client = new Client(dsn: 'pgsql:...')
+
+// Or,
+$client = new Client(pdo: new PDO(...))
+````
+
+### Querying
+
+```php
+
+/** @var \Forevue\HarvesterMetadataSdk\Client $client */
+$client->sources()->all();
+$client->sources()->find(1234);
+$client->sources()->findByUrn('urn:forevue:source:code-hash:static-hash');
+
+$client->providers()->all();
+$client->providers()->find(1234);
+$client->providers()->findByUrn('urn:forevue:provider:code-hash:static-hash');
+
+/** @var \Forevue\HarvesterMetadataSdk\DataObjects\Source $source */
+$source->id();
+$source->name(); // etc
+$source->isDirty() // this is the only computed property
+$source->subSources(); // returns the child sources
+$source->provider(); // returns the parent provider object
+
+// $source->crawlInterval(); and $source->recrawlInterval() returns a array{int, int} not an object
+
+/** @var \Forevue\HarvesterMetadataSdk\DataObjects\Provider $provider */
+$provider->id();
+$provider->name(); // etc
+$provider->sources(); // returns the provider's sources
+```
 
 ## Testing
 
