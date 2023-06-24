@@ -1,0 +1,50 @@
+{
+    "name": "felixdorn/name",
+    "description": ":description",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Félix Dorn",
+            "email": "github@felixdorn.fr"
+        }
+    ],
+    "require": {
+        "php": "^8.2"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.10",
+        "pestphp/pest": "^2.6",
+        "phpstan/phpstan": "^1.10",
+        "symfony/var-dumper": "^6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Felix\\:namespace\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Felix\\:namespace\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "scripts": {
+        "lint": "pint",
+        "test:lint": "pint --test",
+        "test:types": "phpstan analyse --ansi --memory-limit=-1",
+        "test:unit": "pest --colors=always",
+        "test": [
+            "@test:lint",
+            "@test:types",
+            "@test:unit"
+        ]
+    }
+}
