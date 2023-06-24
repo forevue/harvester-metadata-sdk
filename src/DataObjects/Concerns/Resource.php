@@ -19,6 +19,11 @@ trait Resource
         return $this->urn;
     }
 
+    public function type(): string
+    {
+        return explode(':', $this->urn)[3];
+    }
+
     public function createdAt(): string
     {
         return $this->created_at;
@@ -41,6 +46,7 @@ trait Resource
             'code_hash' => $this->codeHash(),
             'static_hash' => $this->staticHash(),
             'is_dirty' => $this->isDirty(),
+            'type' => $this->type(),
         ];
 
         foreach (static::$properties as $property) {

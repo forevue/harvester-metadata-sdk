@@ -23,6 +23,7 @@ it('can retrieve all providers', function () {
         ->description()->toBe('The Effective Altruism Forum is a place for discussion of effective altruism and related topics.')
         ->url()->toBe('https://forum.effectivealtruism.org/')
         ->urn()->toBe('urn:forevue:provider:eaforum:3484d3d:97fa66d1cc41bae08b5c88c7322b35b17cf5a1b2559205eb2aa3bd81b588d162')
+        ->type()->toBe('eaforum')
         ->codeHash()->toBe('3484d3d')
         ->staticHash()->toBe('97fa66d1cc41bae08b5c88c7322b35b17cf5a1b2559205eb2aa3bd81b588d162')
         ->createdAt()->toBe('2023-06-24 12:36:56.109962')
@@ -94,6 +95,7 @@ it('can be serialized to JSON', function () {
         'code_hash' => $provider->codeHash(),
         'static_hash' => $provider->staticHash(),
         'is_dirty' => $provider->isDirty(),
+        'type' => $provider->type(),
         'id' => $provider->id(),
         'name' => $provider->name(),
         'description' => $provider->description(),
