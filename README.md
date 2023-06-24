@@ -45,7 +45,6 @@ $client = new Client(pdo: new PDO(...))
 ### Querying
 
 ```php
-
 /** @var \Forevue\HarvesterMetadataSdk\Client $client */
 $client->sources()->all();
 $client->sources()->find(1234);
@@ -62,13 +61,13 @@ $source->isDirty() // this is the only computed property
 $source->subSources(); // returns the child sources
 $source->provider(); // returns the parent provider object
 
-// $source->crawlInterval(); and $source->recrawlInterval() returns a array{int, int} not an object
-
 /** @var \Forevue\HarvesterMetadataSdk\DataObjects\Provider $provider */
 $provider->id();
 $provider->name(); // etc
 $provider->sources(); // returns the provider's sources
 ```
+
+> `$source->crawlInterval()` and `$source->recrawlInterval()` returns an array{int, int} not an object
 
 ## Testing
 
