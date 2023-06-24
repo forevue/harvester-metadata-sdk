@@ -11,16 +11,15 @@ class Client
     public PDO $pdo;
 
     public function __construct(
-        string  $host = 'localhost',
-        string  $password = '',
-        string  $port = '5432',
-        string  $user = 'postgres',
-        string  $database = 'postgres',
-        string  $driver = 'pgsql',
+        string $host = 'localhost',
+        string $password = '',
+        string $port = '5432',
+        string $user = 'postgres',
+        string $database = 'postgres',
+        string $driver = 'pgsql',
         ?string $dsn = null,
-        ?PDO    $pdo = null
-    )
-    {
+        ?PDO $pdo = null
+    ) {
         if ($pdo !== null) {
             $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
             $this->pdo = $pdo;
